@@ -3,4 +3,5 @@ export class users{
      email:string;
      user_name:string;
      password:string;
+     level:number;
 }
