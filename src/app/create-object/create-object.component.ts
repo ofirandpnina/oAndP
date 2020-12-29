@@ -25,7 +25,7 @@ export class CreateObjectComponent implements OnInit {
       id_class: 3,
       class_name: "car",
       image: "גןף-של-כלב-בצבע-חום.gif",
-      description: "מכונית",
+      description: "מכונננננית",
     }
   ];
   selectedClass: classes={
@@ -35,7 +35,7 @@ export class CreateObjectComponent implements OnInit {
     description: "",
   };
 
-  
+
   properties: any[] = [
     {
       property: "ears",
