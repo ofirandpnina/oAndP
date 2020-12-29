@@ -4,12 +4,12 @@ import{FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { UserClassesVariablasComponent } from './user-classes-variablas/user-classes-variablas.component';
-import { UserClasssComponent } from './user-classs/user-classs.component';
+// import { UserClassesVariablasComponent } from './user-classes-variablas/user-classes-variablas.component';
+// import { UserClasssComponent } from './user-classs/user-classs.component';
 
-import { UsersComponent } from './users/users.component';
-import { ValuesShapeComponent } from './values-shape/values-shape.component';
-import { VariablesComponent } from './variables/variables.component';
+// import { UsersComponent } from './users/users.component';
+// import { ValuesShapeComponent } from './values-shape/values-shape.component';
+// import { VariablesComponent } from './variables/variables.component';
 import { AllclassComponent } from './allclass/allclass.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MyProfileComponent } from './my-profile/my-profile.component';
@@ -20,12 +20,22 @@ import { WordListComponent } from './word-list/word-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 //import { VendordDiagramComponent } from './vendord-diagram/vendord-diagram.component';
 import { ComparisonDiagramComponent } from './comparison-diagram/comparison-diagram.component';
-import { SighnInComponent } from './sighn-in/sighn-in.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 //import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MaterialModule } from './material/material.module';
-import { SighnupComponent } from './sighnup/sighnup.component';
 
+import {ButtonModule} from 'primeng/button';
+import {ChartModule} from 'primeng/chart';
+import { VendordDiagramComponent } from './vendord-diagram/vendord-diagram.component';
+import { LessonsComponent } from './lessons/lessons.component';
+import { MyClassesComponent } from './my-classes/my-classes.component';
+import { MyObjectComponent } from './my-object/my-object.component';
+import { LearningComponent } from './learning/learning.component';
+import { CreateObjectComponent } from './create-object/create-object.component';
+import { SignComponent } from './sign/sign.component';
+import { SighnInComponent } from './sign/sighn-in/sighn-in.component';
+import { SighnupComponent } from './sign/sighnup/sighnup.component';
 
 @NgModule({
   //איזה קומפוננטות אני משתמשת
@@ -34,21 +44,27 @@ import { SighnupComponent } from './sighnup/sighnup.component';
     //MatAutocompleteModule,
     //BrowserAnimationsModule,
    
-    UserClassesVariablasComponent,
-    UserClasssComponent,
+    // UserClassesVariablasComponent,
+    // UserClasssComponent,
     
-    UsersComponent,
-    ValuesShapeComponent,
-    VariablesComponent,
+    // UsersComponent,
+    // ValuesShapeComponent,
+    // VariablesComponent,
     AllclassComponent,
     MyProfileComponent,
     PageNotFoundComponent,
     WordListComponent,
     HomePageComponent,
-    //VendordDiagramComponent,
+    VendordDiagramComponent,
     ComparisonDiagramComponent,
     SighnInComponent,
     SighnupComponent,
+    LessonsComponent,
+    MyClassesComponent,
+    MyObjectComponent,
+    LearningComponent,
+    CreateObjectComponent,
+    SignComponent,
   
         // BrowserAnimationsModule
   ],
@@ -63,8 +79,10 @@ import { SighnupComponent } from './sighnup/sighnup.component';
     FormsModule,
     MaterialModule,
     HttpClientModule,
-        
+    
     ReactiveFormsModule,BrowserModule,//RouterModule.forRoot(ROUTES)
+    ButtonModule,
+    ChartModule
   ],
 //מאיזה קומפוננטה להריץ
   bootstrap: [AppComponent]

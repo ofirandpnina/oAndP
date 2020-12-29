@@ -1,15 +1,27 @@
-<div>
-  <img />
-  <span>
-שם משתמש
-</span>
-</div>
-<nav>
-  <a routerLink="word-list">אוצר מילים </a>
-  <a routerLink="my-classes" >המחלקות שלי</a>
-  <a  routerLink="continued">המשך בלמידה</a>/////////////////מה הוא יהיה?
-  <a routerLink="comparison-diagram" >דיאגרמת השוואה</a>
-  <a routerLink="vendor-diagram" >דיאגרמת הספקים</a>
 
+
+<nav>
+
+  <mat-grid-list cols="7" rowHeight="3:1" gutterSize="15">
+    <mat-grid-tile [colspan]="5" [rowspan]="2">
+      <a routerLink="word-list">אוצר מילים </a>
+      <a routerLink="/my-object">המחלקות שלי</a>
+       <a routerLink="comparison-diagram">דיאגרמת השוואה</a>
+      <a routerLink="vendor-diagram">דיאגרמת הספקים</a>
+      <button mat-fab color="accent" class="button"> 
+     
+        <mat-icon>play_circle_outline</mat-icon>
+      </button>  
+       <a routerLink="/learning">המשך בלמידה</a>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="7">
+      <button mat-fab color="primary" class="button">
+        <mat-icon class="icon">person_pin</mat-icon>
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="5" [rowspan]="5">
+      <router-outlet></router-outlet>
+    </mat-grid-tile>
+  </mat-grid-list>
 </nav>
-<router-outlet></router-outlet>
+

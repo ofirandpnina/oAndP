@@ -1,0 +1,32 @@
+mat-form-field{
+  text-align: right;
+  
+}
+ mat-icon{
+   text-align: center;
+ } 
+ 
+.sighnin{
+  
+  padding-top: 5%;
+    padding-bottom: 5%;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+  border: 1px solid rgb(32, 166, 179);
+  border-radius: 30px;
+  width: 300px;
+  margin:auto;
+  margin-top: 5%;
+  text-align: center;
+   
+}  
+ .a{
+   padding-right: 5%;
+
+ }
+  mat-form-field{
+    width: 236px;
+  }
+  body{
+    background-color: #3b3b3b;
+  }

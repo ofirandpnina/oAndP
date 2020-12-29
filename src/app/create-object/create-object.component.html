@@ -1,0 +1,19 @@
+<mat-grid-list cols="5" rowHeight="26vh">
+    <mat-grid-tile colspan="2" rowspan="3" id="screen">
+<img src="../../assets/images/{{selectedClass.class_name}}/{{selectedClass.image}}"  id="body" />
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="1">
+                  <button mat-raised-button *ngFor="let item of arrClass" (click)="chooseClass(item)">{{item.description}}</button>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3" rowspan="2">
+<p>
+    public class {{selectedClass.class_name}} <br />
+    ((<br />
+    <br />
+    ))<br />
+</p>
+
+
+    </mat-grid-tile>
+
+</mat-grid-list>

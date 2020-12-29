@@ -1,0 +1,25 @@
+.button{
+    size: 100px;
+}
+mat-grid-tile {
+    background: lightblue;
+  }
+  nav{
+      width: 90%;
+      text-align: center;
+      position:relative ;
+      left:80px;
+      top: 20%;
+  }
+ mat-icon{
+    font-size: 100px;
+    vertical-align: initial;
+    position: relative;
+    left: -40px;
+    top: -40px;
+
+  }
+  .button{
+      width:100px;
+      height:100px;
+  }

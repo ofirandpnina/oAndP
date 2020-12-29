@@ -7,7 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendordDiagramComponent implements OnInit {
 
-  constructor() { }
+  data: any;
+
+  constructor() {
+
+//לשלוף את הלבל מהלוכל סטורג'
+
+
+
+    this.data = {
+      labels: ['Finished','In process','You Have to learn'],
+      datasets: [
+          {
+              data: [4, 1, 25],
+              backgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ],
+              hoverBackgroundColor: [
+                  "#FF6384",
+                  "#36A2EB",
+                  "#FFCE56"
+              ]
+          }]    
+      };
+
+   }
 
   ngOnInit() {
   }

@@ -23,7 +23,7 @@ export class DbService {
 
   getAllClassess():Observable<classes[]>{
 
-   return this.http.get<classes[]>("/api/classes_");
+   return this.http.get<classes[]>("https://localhost:44363/api/classes_/Get");
   }
   
  // getAllClasses_variables():Observable<classes_variables[]>{

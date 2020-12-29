@@ -21,3 +21,21 @@ body{
     display: inline;
     background-color: #3b3b3b;
 }
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-grid-tile {
+    background: lightblue;
+  }
+  img{
+    max-width: 17%;
+    text-align: center;
+    height: auto;
+  }
+  header{
+    text-align: center;
+    background-repeat: no-repeat;
+   
+    /* background-size: cover;
+    background-image: url(../assets/images/logo1.png); */
+  }
