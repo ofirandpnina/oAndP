@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { classes } from './class/classes';
 import { userVariable } from './class/userVariable';
@@ -16,53 +16,55 @@ import { variables } from './class/variables';
 })
 export class DbService {
 
-  constructor(private http:HttpClient) { 
+  constructor(private http: HttpClient) {
 
 
   }
 
-  getAllClassess():Observable<classes[]>{
+  getAllClassess(): Observable<classes[]> {
 
-   return this.http.get<classes[]>("https://localhost:44363/api/classes_/Get");
+    return this.http.get<classes[]>("https://localhost:44363/api/classes_/Get");
   }
-  
- // getAllClasses_variables():Observable<classes_variables[]>{
 
-//    return this.http.get<classes_variables[]>("/api/classes_variables_");
-//   }
-   getAllUserClasses_variablas():Observable<userClasses_variablas[]>{
+  // getAllClasses_variables():Observable<classes_variables[]>{
+
+  //    return this.http.get<classes_variables[]>("/api/classes_variables_");
+  //   }
+  getAllUserClasses_variablas(): Observable<userClasses_variablas[]> {
 
     return this.http.get<userClasses_variablas[]>("/api/userClasses_variablas_");
-   }
-   getAllUserClasss():Observable<userClasss[]>{
+  }
+  getAllUserClasss(): Observable<userClasss[]> {
 
     return this.http.get<userClasss[]>("/api/userClasss_");
-   }
-   getAllUserVariable():Observable<userVariable[]>{
+  }
+  getAllUserVariable(): Observable<userVariable[]> {
 
     return this.http.get<userVariable[]>("/api/userVariable_");
-   }
-   getAllValuesShape():Observable<valuesShape[]>{
+  }
+  getAllValuesShape(): Observable<valuesShape[]> {
 
     return this.http.get<valuesShape[]>("/api/valuesShape_");
-   }
-   getAllUsers():Observable<users[]>{
+  }
+  getAllUsers(): Observable<users[]> {
 
     return this.http.get<users[]>("/api/users_");
-   }
-   getAllVariables():Observable<variables[]>{
+  }
+  getAllVariables(): Observable<variables[]> {
 
     return this.http.get<variables[]>("/api/variables_");
-   }
-
-   tryPostFunction(){
-     console.log("tryPostFunction")
-     return this.http.post("https://localhost:44363/api/userClasss_/addUsers",{"email":"zaava","password":"123456"})
-   }
-   login( email:string,password:string){
-    console.log("login")
-    return this.http.post("https://localhost:44363/api/users_/Login",{"email":email,"password":password});
   }
 
+  tryPostFunction() {
+    console.log("tryPostFunction")
+    return this.http.post("https://localhost:44363/api/userClasss_/addUsers", { "email": "zaava", "password": "123456" })
+  }
+  login(email: string, password: string) {
+    console.log("login")
+    return this.http.post("https://localhost:44363/api/users_/Login", { "email": email, "password": password });
+  }
+  register(user_name: string, email: string, password: string) {
+    return this.http.post("https://localhost:44363/api/users_register", { "user_name": user_name, "email": email, "password": password })
+  }
 
 }

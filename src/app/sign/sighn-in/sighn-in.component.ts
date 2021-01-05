@@ -51,7 +51,6 @@ export class SighnInComponent implements OnInit {
           alert("שם משתמש או סיסמא שגויים ");
       }
     );
-    //למחוק!!!!!!!!!!!!!!!!! רק לתצוגה
   }
   ngOnInit() {
   }

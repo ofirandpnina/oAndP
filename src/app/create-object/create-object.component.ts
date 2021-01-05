@@ -12,13 +12,13 @@ export class CreateObjectComponent implements OnInit {
     {
       id_class: 1,
       class_name: "dog",
-      image: "כלב-צורה-דיפולטיבית.gif",
+      image: "dog_def.gif",
       description: "כלב",
     },
     {
       id_class: 2,
       class_name: "smile",
-      image: "כלב-דלמתי-גוף.gif",
+      image: "face_def.gif",
       description: "סמיילי",
     },
     {
@@ -28,7 +28,7 @@ export class CreateObjectComponent implements OnInit {
       description: "מכונננננננננית",
     }
   ];
-  selectedClass: classes={
+  selectedClass: classes = {
     id_class: 0,
     class_name: "demo-class",
     image: "",
@@ -54,7 +54,7 @@ export class CreateObjectComponent implements OnInit {
 
   chooseClass(selectedClass: classes) {
     console.log(selectedClass);
-    
+
     this.selectedClass = selectedClass;
   }
   ngOnInit(): void {

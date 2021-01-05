@@ -2,11 +2,7 @@
 
   <div class=sighnin>
 <form [formGroup]="form">
-  <mat-form-field appearance="fill" >
-    <mat-label>:שם</mat-label>
-    <input matInput placeholder="הכנס שם משתמש">
-  </mat-form-field>
-    <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill">
       <mat-label>אימייל</mat-label>
       <input matInput placeholder="pat@example.com"         formControlName="emailAddress"   required>
       <mat-error *ngIf="form.value.emailAddress.invalid">{{getErrorMessage()}}</mat-error>

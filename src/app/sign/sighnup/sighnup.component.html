@@ -1,24 +1,28 @@
 <div class="example-container ">
-    <div class=sighnin>
-        <mat-form-field appearance="fill" >
-            <mat-label>:שם</mat-label>
-            <input matInput placeholder="הכנס שם משתמש">
-          </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>אימייל</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email"  ng-model="emailAddress" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>:הכנס סיסמא</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" ng-model="password">
-        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-          [attr.aria-pressed]="hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-      <a href="#" routerLink="" class="a">להתחברות</a>
 
-    </div>
-  
+  <div class=sighnin>
+<form [formGroup]="form">
+  <mat-form-field appearance="fill" >
+    <mat-label>:שם</mat-label>
+    <input matInput placeholder="הכנס שם משתמש"  formControlName="user_name" >
+  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>אימייל</mat-label>
+      <input matInput placeholder="pat@example.com"         formControlName="emailAddress"   required>
+      <mat-error *ngIf="form.value.emailAddress.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>:הכנס סיסמא</mat-label>
+      <input name="password"  formControlName="password"   matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <br />
+    <a href="#" routerLink="/" class="a">כבר רשום? להתחברות-></a>
+    <button mat-raised-button>הרשמה</button> 
+</form>
   </div>
+
+</div>
