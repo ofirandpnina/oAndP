@@ -13,4 +13,8 @@ export class JsonServiceService {
     return this.http.get("./assets/json/cities-israel.json");
   }
 
+  getLessonss():Observable<any>{
+    return this.http.get("./assets/json/lessons.json");
+  }
+
 }

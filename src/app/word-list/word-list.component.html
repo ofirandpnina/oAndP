@@ -1,8 +1,54 @@
-<mat-grid-list cols="1" rowHeight="2:1" gutterSize="15">
+<!-- <mat-grid-list cols="1" rowHeight="2:1" gutterSize="15">
     <mat-grid-tile>
         <button></button>
     </mat-grid-tile>
     <mat-grid-tile>2</mat-grid-tile>
     <mat-grid-tile [rowspan]="2">3</mat-grid-tile>
     
-</mat-grid-list>
+</mat-grid-list> -->
+<header>
+    <button mat-button>
+        <img src="../../assets/images/webphoto/header-logo.png">
+    </button>
+</header>
+<aside></aside>
+<div class="words" dir="rtl">
+    <ul>
+        <li *ngFor="let lesson of current_lessons">שיעור מספר {{lesson.id}}
+            <ol>
+                <li *ngFor="let word of lesson.list_of_words">
+                    {{word.word}} -- {{word.definition}}</li>
+            </ol>
+        </li>
+    </ul>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"> #</th>
+                <th scope="col">מילה</th>
+                <th scope="col">הסבר</th>
+            </tr>
+        </thead>
+    </table>
+
+    <table class="table" *ngFor="let lesson of current_lessons">
+        <thead class="thead-light">
+            <tr>
+              <th scope="col" colspan="3"> שיעור {{lesson.id}}</th>
+            
+            </tr>
+          </thead>
+        <tbody>
+            <tr *ngFor="let word of lesson.list_of_words">
+                <th scope="row">1</th>
+                <td>{{word.word}}</td>
+                <td>{{word.definition}}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
+<aside></aside>

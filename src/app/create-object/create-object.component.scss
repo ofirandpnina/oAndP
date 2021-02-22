@@ -1,14 +1,73 @@
 mat-grid-tile {
-    background: lightblue;
-  }
-  #screen{
-    background:white;
-    border-style: solid;
-    border-radius: 20px;
-    border-color: rgb(108, 154, 168);
-  }
-  img{
-    max-width: 100%;
-    text-align: center;
-    height: 100%;
-  }
+  background: lightblue;
+}
+#screen {
+  background: white;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgb(108, 154, 168);
+}
+#body {
+  max-width: 100%;
+  text-align: center;
+  height: 100%;
+}
+.ears {
+  position: absolute;
+  width: 61%;
+  top: -1vh;
+  left: 7vw;
+}
+.eyes{
+  position: absolute;
+  width: 20%;
+  top: 15vh;
+  left: 15vw;
+
+}
+.nose{
+  position: absolute;
+  width: 7%;
+  left: 42vh;
+  top: 25vh;
+}
+.mouth{
+  position: absolute;
+  width: 18%;
+  left: 36vh;
+  top: 27vh;
+}
+.neck{
+  position: absolute;
+    width: 30%;
+    top: 36vh;
+    left: 31vh
+}
+
+
+
+
+.eye_s{  
+   position: absolute;
+
+} 
+
+
+.sword{
+color:blue;
+}
+// .code::before{
+//   display: block;
+//   content: '{';
+// }
+// .code::after{
+//   display: block;
+//   content: '}';
+// }
+
+.code{
+  font-weight: 900;
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+}

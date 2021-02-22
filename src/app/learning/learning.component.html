@@ -1,11 +1,17 @@
 <div>
 
 
-<mat-grid-list cols="5" rowHeight="78vh">
+    <mat-grid-list cols="5" rowHeight="78vh">
 
- <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
- <mat-grid-tile colspan="3" rowspan="1" id="screen"></mat-grid-tile>
- <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>  
-</mat-grid-list>
+        <mat-grid-tile colspan="1" rowspan="1">
+            <button mat-raised-button (click)="next()" [disabled]="end">הבא</button>
+            <button mat-raised-button (click)="returnToLessons()">רשימת השיעורים</button>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="3" rowspan="1" id="screen">
+            <video [src]="'./../../assets/lessons/'+url"  width="720" height="540" type="video/mp4" controls>
+            </video>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1"></mat-grid-tile>
+    </mat-grid-list>
 
 </div>

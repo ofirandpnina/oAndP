@@ -36,6 +36,13 @@ import { CreateObjectComponent } from './create-object/create-object.component';
 import { SignComponent } from './sign/sign.component';
 import { SighnInComponent } from './sign/sighn-in/sighn-in.component';
 import { SighnupComponent } from './sign/sighnup/sighnup.component';
+import { MenegementComponent } from './menegement/menegement.component';
+import { AdlessonComponent } from './menegement/adlesson/adlesson.component';
+import { AddobjectComponent } from './menegement/addobject/addobject.component';
+import {FileUploadModule} from 'primeng/fileupload';
+import {CardModule} from 'primeng/card';
+import{ToastModule}from 'primeng/toast';
+import { ImpDetailsComponent } from './imp-details/imp-details.component';
 
 @NgModule({
   //איזה קומפוננטות אני משתמשת
@@ -65,6 +72,10 @@ import { SighnupComponent } from './sign/sighnup/sighnup.component';
     LearningComponent,
     CreateObjectComponent,
     SignComponent,
+    MenegementComponent,
+    AdlessonComponent,
+    AddobjectComponent,
+    ImpDetailsComponent,
   
         // BrowserAnimationsModule
   ],
@@ -82,7 +93,9 @@ import { SighnupComponent } from './sign/sighnup/sighnup.component';
     
     ReactiveFormsModule,BrowserModule,//RouterModule.forRoot(ROUTES)
     ButtonModule,
-    ChartModule
+    ChartModule,
+    FileUploadModule,CardModule,ToastModule,
+    
   ],
 //מאיזה קומפוננטה להריץ
   bootstrap: [AppComponent]

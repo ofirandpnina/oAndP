@@ -1,12 +1,13 @@
-<span>
-    <mat-grid-list cols="6" rowHeight="20vh" gutterSize="15"> 
+<mat-grid-list cols="6" rowHeight="20vh" gutterSize="15">
+    <div *ngFor="let c of arrClass">
         <mat-grid-tile [colspan]="4" [rowspan]="2">
-            המערך של הכלב
+            <span *ngFor="let imp of c.imps"  (click)="goToImp(imp)">{{imp.name_object }}&nbsp;</span>
         </mat-grid-tile>
-       <mat-grid-tile [colspan]="2" [rowspan]="2">
-            <img mat-card-image src="../assets/images/dog_list.png">
-        </mat-grid-tile> 
-          <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile [colspan]="2" [rowspan]="2">
+            <img mat-card-image src="../assets/images/{{c.userClass.classes.image}}">
+        </mat-grid-tile>
+    </div>
+    <!-- <mat-grid-tile [colspan]="4" [rowspan]="2">
             המערך של הסמיילי
         </mat-grid-tile>
                 
@@ -19,8 +20,13 @@
        
            <mat-grid-tile [colspan]="2" [rowspan]="2">
             תמונה של אוטו
-        </mat-grid-tile>
-       
-     
-    </mat-grid-list>
-</span>
+        </mat-grid-tile> -->
+
+</mat-grid-list>
+
+<!-- <div *ngFor="let c of arrClass">
+    <div> <img mat-card-image src="../assets/images/{{c.userClass.classes.image}}"></div>
+    <div> 
+    <p   *ngFor="let imp of c.imps"> {{imp.name_object}}</p>    
+    </div>
+</div> -->

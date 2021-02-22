@@ -1,6 +1,4 @@
-
-
-<nav>
+<!-- <nav>
 
   <mat-grid-list cols="7" rowHeight="3:1" gutterSize="15">
     <mat-grid-tile [colspan]="5" [rowspan]="2">
@@ -23,5 +21,71 @@
       <router-outlet></router-outlet>
     </mat-grid-tile>
   </mat-grid-list>
-</nav>
+</nav> -->
+<header>
 
+  <button mat-button (click)="goToLearn()">
+    <img src="../../assets/images/webphoto/play-icon.png">
+  </button>
+  <span>{{this.user.user_name}}</span>
+</header>
+<div class="profileLinks">
+  <a routerLink="/my-object"><img src="../../assets/images/webphoto/my-object-list.png"> </a>
+  <a routerLink="/create-object"><img src="../../assets/images/webphoto/building-object.png"></a>
+
+  <a routerLink="/word-list"><img src="../../assets/images/webphoto/word-list.png"></a>
+</div>
+<div class="row">
+  <div class="col-6">
+    <button type="button" class="btn btn-primary d-block m-auto" data-bs-toggle="modal"
+      data-bs-target="#comparisonDiagram">
+      דיאגרמת הספקים
+    </button>
+  </div>
+  <div class="col-6">
+    <button type="button" class="btn btn-primary d-block m-auto" data-bs-toggle="modal"
+      data-bs-target="#vendordDiagram">
+      דיאגרמת שלבים
+    </button>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="comparisonDiagram" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-comparison-diagram></app-comparison-diagram>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="vendordDiagram" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-vendord-diagram></app-vendord-diagram>>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

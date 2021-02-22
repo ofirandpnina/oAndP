@@ -5,3 +5,17 @@ mat-grid-tile {
       width: 95%;
       text-align: center;
   }
+  header{
+    background-color:  #3a75bc;
+    margin-bottom:30px;
+   }
+      img{
+     
+          height: 100px;
+
+    }
+    aside{
+        width: 5%;
+        height: 100%;
+        background-color: black;
+    }

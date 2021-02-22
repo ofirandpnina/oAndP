@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../db.service';
 
 @Component({
   selector: 'app-comparison-diagram',
@@ -9,16 +10,20 @@ export class ComparisonDiagramComponent implements OnInit {
 
   data: any;
   minutes: number[];
-  minutes_avg: number[];
+  labels: number[];
 
 
-  constructor() {
-    // this.serv.getMinutes( result => this.minutes = result);
-   
+  constructor(private serv:DbService) {
+    //לשלוף מהלוקל סטורג' את הקוד של המשתמש המחובר
+    const id = 1;
+    this.serv.getWeekStatistics(id).subscribe(res=>{
+      console.log(res);
+    });
+
     this.minutes = [65, 59, 80, 81, 56, 55];
 
     this.data = {
-      labels: ['sunday', 'monday', 'tuesday', 'wednsday', 'thursday', 'friday'],
+      labels: this.labels,
       datasets: [
         {
           label: 'Minutes of learnings',

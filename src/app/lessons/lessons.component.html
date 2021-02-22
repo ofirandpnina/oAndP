@@ -1,21 +1,21 @@
-  <div id="div1">
+<header>
+  <button mat-button>
+    <img src="../../assets/images/webphoto/header-logo.png">
+  </button>
+</header>
+<div id="div1">
 
-    <mat-grid-list cols="7" rowHeight="3:1" gutterSize="15">
-      <mat-grid-tile [colspan]="5" [rowspan]="2">
-        <a routerLink="/my-profile">To my profile </a>
-        <h1>Classes</h1>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="2" [rowspan]="7">
-       <p>what are the classes???
-           sdf fgghj rt  lu hj fgj fgh tyuoy yul hjlh lyu fgdf gh dr <br>
-           sdf fgghj rt  lu hj fgj fgh tyuoy yul hjlh lyu fgdf gh dr <br>
-           sdf fgghj rt  lu hj fgj fgh tyuoy yul hjlh lyu fgdf gh dr <br>
-           sdf fgghj rt  lu hj fgj fgh tyuoy yul hjlh lyu fgdf gh dr <br>
-           sdf fgghj rt  lu hj fgj fgh tyuoy yul hjlh lyu fgdf gh dr <br>
-       </p>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="5" [rowspan]="5">
-      
-      </mat-grid-tile>
-    </mat-grid-list>
+  <mat-grid-list cols="6" rowHeight="3:1" gutterSize="15">
+    <mat-grid-tile  *ngFor="let lesson of lessons"[colspan]="1" [rowspan]="3">
+     
+<div class="flex-col">
+          <h2>שיעור {{lesson.id}}</h2>
+          <video width="160" height="120" controls>
+            <source src="./../../assets/lessons/{{lesson.url}}" type="video/mp4">
+          </video>
+          <button mat-raised-button (click)="toLearn(lesson.url)"  [disabled]="lesson.id>user.level">ללמידה</button>
+  </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
 </div>

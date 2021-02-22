@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { classes } from './class/classes';
-import { userVariable } from './class/userVariable';
-import { userClasses_variablas } from './class/userClasses_variablas';
 import { userClasss } from './class/userClasss';
 
 import { valuesShape } from './class/valuesShape';
 import { users } from './class/users';
 import { variables } from './class/variables';
+import { userClassImp } from './class/userClassImp';
+import {MenuItem} from 'primeng/api'; 
 //import { httpFactory } from '@angular/http/src/http_module';
 
 @Injectable({
@@ -30,18 +30,12 @@ export class DbService {
 
   //    return this.http.get<classes_variables[]>("/api/classes_variables_");
   //   }
-  getAllUserClasses_variablas(): Observable<userClasses_variablas[]> {
 
-    return this.http.get<userClasses_variablas[]>("/api/userClasses_variablas_");
-  }
   getAllUserClasss(): Observable<userClasss[]> {
 
     return this.http.get<userClasss[]>("/api/userClasss_");
   }
-  getAllUserVariable(): Observable<userVariable[]> {
 
-    return this.http.get<userVariable[]>("/api/userVariable_");
-  }
   getAllValuesShape(): Observable<valuesShape[]> {
 
     return this.http.get<valuesShape[]>("/api/valuesShape_");
@@ -64,7 +58,28 @@ export class DbService {
     return this.http.post("https://localhost:44363/api/users_/Login", { "email": email, "password": password });
   }
   register(user_name: string, email: string, password: string) {
-    return this.http.post("https://localhost:44363/api/users_register", { "user_name": user_name, "email": email, "password": password })
+    return this.http.post("https://localhost:44363/api/users_/AddUser", { "user_name": user_name, "email": email, "password": password })
   }
+
+
+  getWeekStatistics(id): Observable<any[]> {
+    return this.http.get<any[]>("https://localhost:44363/api/user_date_/GetWeekStatistics/" + id);
+  }
+
+  GetUserClassByUserId(id): Observable<userClasss[]> {
+    return this.http.get<userClasss[]>("https://localhost:44363/api/userClasss_/GetUserClassByUserId/" + id);
+  }
+
+  GetUserClassImpByUserId(id):Observable<any[]>{
+    return  this.http.get<any[]>("https://localhost:44363/api/userClassImp/GetUserClassImpByUserId/" + id);
+  }
+
+  addImp(imp: userClassImp): Observable<any> {
+    return this.http.post("https://localhost:44363/api/userClassImp/AddImp", imp);
+  }
+
+updateLevel(user):Observable<any>{
+  return this.http.put("https://localhost:44363/api/users_/UpdateLevel/"+user.id, user);
+}
 
 }

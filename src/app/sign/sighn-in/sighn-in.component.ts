@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-sighn-in',
   templateUrl: './sighn-in.component.html',
-  styleUrls: ['./sighn-in.component.css']
+  styleUrls: ['./sighn-in.component.scss']
 })
 export class SighnInComponent implements OnInit {
   hide: boolean = true;
@@ -20,6 +20,7 @@ export class SighnInComponent implements OnInit {
     password: new FormControl('',),
     emailAddress: new FormControl('', [Validators.required, Validators.email]),
   });
+
 
   constructor(private dbService: DbService, private router: Router) {
 
@@ -38,6 +39,7 @@ export class SighnInComponent implements OnInit {
     const password = this.form.value.password;
     const email = this.form.value.emailAddress;
 
+
     this.dbService.login(email, password).subscribe(
       user => {
         console.log("returned user " + user);
@@ -45,6 +47,12 @@ export class SighnInComponent implements OnInit {
           //כשרוצים לשמור ללוקל סטורג'
           const stringUser = JSON.stringify(user);
           localStorage.setItem('user', stringUser);
+          //שמירה של זמן כניסה
+          const startTime = new Date();
+          console.log("startTime is: " + startTime);
+          const stringStartTime = JSON.stringify(startTime);
+          localStorage.setItem("startTime", stringStartTime);
+          //ניתוב לדף הפרופיל
           this.router.navigate(["my-profile"]);
         }
         else
@@ -53,6 +61,7 @@ export class SighnInComponent implements OnInit {
     );
   }
   ngOnInit() {
+    document.body.classList.add('.bgsighnbody');
   }
 
 }

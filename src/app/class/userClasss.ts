@@ -1,5 +1,11 @@
+import { classes } from "./classes";
+import { variables } from "./variables";
+
 export class userClasss{
-    user_class_id:number;
-    class_id:number;
-    user_id:number;
+    id_create_class:number;
+    id_user:number;
+    classes:classes;
+    name_user_class:string;
+    variable:variables[];
+
 }

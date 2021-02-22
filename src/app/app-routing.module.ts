@@ -20,6 +20,10 @@ import { CreateObjectComponent } from './create-object/create-object.component';
 import { SignComponent } from './sign/sign.component';
 import { SighnupComponent } from './sign/sighnup/sighnup.component';
 import { SighnInComponent } from './sign/sighn-in/sighn-in.component';
+import { MenegementComponent } from './menegement/menegement.component';
+import { AddobjectComponent } from './menegement/addobject/addobject.component';
+import { AdlessonComponent } from './menegement/adlesson/adlesson.component';
+import { ImpDetailsComponent } from './imp-details/imp-details.component';
 
 const routes: Routes = [
   {
@@ -37,16 +41,28 @@ const routes: Routes = [
     children: [
       { path: "", component: ComparisonDiagramComponent },
       // { path: "my-classes", component: UserClasssComponent },
-      { path: "word-list", component: WordListComponent },
+      
       { path: "vendor-diagram", component: VendordDiagramComponent },
       { path: "comparison-diagram", component: ComparisonDiagramComponent },
       { path: "my-classes", component: MyClassesComponent },
+      
     ]
   },
+  {path:"menegment",component:MenegementComponent,
+      children:[
+
+        {path:"addobject",component:AddobjectComponent},
+        {path:"addlson",component:AdlessonComponent},
+      ]
+
+  },
   { path: "my-object", component: MyObjectComponent },
+  { path: "imp-details", component: ImpDetailsComponent },
+  { path: "create-object", component: CreateObjectComponent },
+  { path: "word-list", component: WordListComponent },
   { path: "lessons", component: LessonsComponent },
   { path: "learning", component: LearningComponent },
-  { path: "create-object", component: CreateObjectComponent },
+  
   { path: "**", component: PageNotFoundComponent }];
 
 @NgModule({

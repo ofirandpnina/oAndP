@@ -8,3 +8,30 @@ mat-grid-tile {
       left:80px;
       top: 20%;
   }
+
+  mat-grid-tile {
+    background: lightblue;
+  }
+  nav{
+      width: 95%;
+      text-align: center;
+  }
+  header{
+    background-color:  #3a75bc;
+    margin-bottom:30px;
+   }
+      img{
+     
+          height: 100px;
+
+    }
+    aside{
+        width: 5%;
+        height: 100%;
+        background-color: black;
+    }
+
+    .flex-col{
+        display: flex;
+        flex-direction:column;
+    }

@@ -1,0 +1,16 @@
+img {
+  max-width: 17%;
+  text-align: center;
+  height: auto;
+}
+header {
+  text-align: center;
+  background-repeat: no-repeat;
+}
+#bgsighnbody {
+  width: 100vw !important;
+  height: 100vh;
+  position: fixed;
+  max-width: 100vw;
+  z-index: -3;
+}

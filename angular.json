@@ -34,8 +34,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-
-          
+              ".//node_modules/postcss-loader/dist/cjs.js"          
             ]
           },
           "configurations": {

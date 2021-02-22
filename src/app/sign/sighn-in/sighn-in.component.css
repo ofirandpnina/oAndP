@@ -27,6 +27,6 @@ mat-form-field{
   mat-form-field{
     width: 236px;
   }
-  body{
-    background-color: #3b3b3b;
+  .bgsighnbody{
+    background-image: url(../../../assets/images/sighn-beckground.png);
   }

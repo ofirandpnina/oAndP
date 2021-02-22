@@ -1,19 +1,71 @@
 <mat-grid-list cols="5" rowHeight="26vh">
+    <!-- תמונותתתתתתתתתתתתתתתתתתתתתתתתתת -->
+
     <mat-grid-tile colspan="2" rowspan="3" id="screen">
-<img src="../../assets/images/{{selectedClass.class_name}}/{{selectedClass.image}}"  id="body" />
+        <div *ngIf="implement.userClasses!=null; then imgBlock"> </div>
+
+        <ng-template #imgBlock>
+            <img src="../../assets/images/{{implement.userClasses.classes.class_name}}/{{implement.userClasses.classes.image}}"
+                id="body" />
+
+            <img *ngFor="let vs of implement.valuesShape" [class]="vs.variable_name" [id]="vs.value_image"
+                src="../../assets/images/{{implement.userClasses.classes.class_name}}/{{vs.value_image}}">
+
+        </ng-template>
     </mat-grid-tile>
+    <input type="checkbox"  >
+
+
+    <!-- כפתוריםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםםם -->
     <mat-grid-tile colspan="3" rowspan="1">
-                  <button mat-raised-button *ngFor="let item of arrClass" (click)="chooseClass(item)">{{item.description}}</button>
+        <!-- <button  *ngIf="selectedClass.id_class==0"  mat-raised-button *ngFor="let item of arrClass" (click)="chooseClass(item)">{{item.class_name}}</button> -->
+        <!-- <button  *ngIf="selectedClass.id_class!=0"  mat-raised-button *ngFor="let item of selectedClass.variable" >{{item.name_v}}</button> -->
+        <div *ngIf="level==1; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock> <button mat-raised-button *ngFor="let item of arrClass"
+                (click)="chooseClass(item)">{{item.name_user_class}}</button></ng-template>
+        <ng-template #elseBlock>
+            <div *ngIf="level==2; then thenBlock2 else elseBlock2"></div>
+            <ng-template #thenBlock2> <button mat-raised-button *ngFor="let item of selectedClass.variable"
+                    (click)="chooseVariable(item)">{{item.name_v}}</button>
+                    <button (click)="goToImp()" >סיימתי</button>
+                </ng-template>   
+            <ng-template #elseBlock2>
+                <button mat-raised-button *ngFor="let item of selectedVariable.valuesShape"
+                    (click)="chooseValueShape(item)">{{item.value_name}}</button>
+                <button (click)="returnToVariables()">שמור</button>
+            </ng-template>
+
+
+        </ng-template>
+        <!-- <div *ngIf="selectedVariable.variable_id!=0&&selectedVariable.variable_id!=0; then elseBlock2 "></div> -->
+
     </mat-grid-tile>
+
+
+
+    <!-- קודדדדדדדדדדדדדדדדדדדדדדד -->
+
     <mat-grid-tile colspan="3" rowspan="2">
-<p>
-    public class {{selectedClass.class_name}} <br />
-    ((<br />
-    <br />
-    ))<br />
-</p>
 
+        <div *ngIf="implement.userClasses!=null&& implement.name_object!=''; then codeBlock else nameBlock"></div>
+        <ng-template #codeBlock>
 
+            <div class="code">
+                <p>
+                    static void Main(string[] args)<br>
+                    {{ '{'}} <br>
+                    &nbsp; {{implement.userClasses.name_user_class}} {{implement.name_object}} = new {{implement.userClasses.name_user_class}}
+                    (); <br>
+                </p>
+                <p *ngFor="let vs of implement.valuesShape">&nbsp; {{implement.name_object}}.{{vs.variable_name}} = {{vs.value_name}}; <br>
+                </p>
+                <p> {{ '}'}} <br></p>
+            </div>
+        </ng-template>
+        <ng-template #nameBlock>
+            <input [(ngModel)]="imp_name" placeholder="Enter name to your ....."/>
+            <button (click)="saveImpName()">אישור</button>
+        </ng-template>
     </mat-grid-tile>
 
 </mat-grid-list>
